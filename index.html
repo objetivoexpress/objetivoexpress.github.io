@@ -6,273 +6,244 @@
     <title>Objetivo Express - Motofrete Profissional</title>
     <style>
         :root {
-            --amarelo: #ffcc00;
-            --amarelo-hover: #e6b800;
-            --preto: #121212;
-            --preto-claro: #1e1e1e;
-            --branco: #ffffff;
-            --cinza: #888888;
+            --bg-color: #0b0b0b;
+            --card-bg: #161616;
+            --yellow: #ffcc00;
+            --yellow-hover: #e6b800;
+            --text-color: #f4f4f4;
+            --gray-text: #aaaaaa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--preto);
-            color: var(--branco);
-            margin: 0;
-            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        /* Barra de Abas / Menu Superior */
-        nav {
-            background-color: var(--preto-claro);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 2px solid var(--amarelo);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
-
-        .nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 10px;
-            gap: 15px;
-        }
-
-        .nav-container a {
-            color: var(--branco);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95em;
-            padding: 6px 12px;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
-
-        .nav-container a:hover {
-            color: var(--preto);
-            background-color: var(--amarelo);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 100px 20px 20px 20px; /* Espaço para o menu fixo */
-            text-align: center;
         }
 
         header {
-            padding: 40px 0 20px 0;
+            background-color: #000;
+            border-bottom: 3px solid var(--yellow);
+            padding: 1.5rem 1rem;
+            text-align: center;
         }
 
-        .logo {
-            max-width: 260px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2);
+        header h1 {
+            color: var(--yellow);
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        section {
-            background-color: var(--preto-claro);
-            padding: 35px 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border: 2px solid var(--amarelo);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        header p {
+            color: var(--gray-text);
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
         }
 
-        h1, h2 {
-            color: var(--amarelo);
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
         }
 
-        h1 {
-            font-size: 2.2em;
-            margin-bottom: 10px;
+        .about {
+            background: var(--card-bg);
+            border-left: 4px solid var(--yellow);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2.5rem;
         }
 
-        h2 {
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            border-bottom: 1px solid rgba(255, 204, 0, 0.2);
-            padding-bottom: 8px;
+        .about h2 {
+            color: var(--yellow);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
         }
 
-        p {
-            color: #ddd;
-            font-size: 1.05em;
+        .services-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--yellow);
+            font-size: 1.8rem;
+            text-transform: uppercase;
         }
 
-        .grid-galeria {
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            gap: 1rem;
+            margin-bottom: 3rem;
         }
 
-        .grid-galeria img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #222;
+            padding: 1.2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--yellow);
+        }
+
+        .card h3 {
+            color: var(--yellow);
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .card p {
+            color: var(--gray-text);
+            font-size: 0.85rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(145deg, #121212, #1c1c1c);
+            border: 2px solid var(--yellow);
             border-radius: 10px;
-            border: 1px solid var(--amarelo);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 2rem 1rem;
+            text-align: center;
         }
 
-        .grid-galeria img:hover {
-            transform: scale(1.04);
-            box-shadow: 0 6px 15px rgba(255, 204, 0, 0.3);
+        .contact-section h2 {
+            color: var(--yellow);
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+
+        .rating {
+            color: var(--yellow);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
 
         .btn-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 1rem;
             align-items: center;
-            margin-top: 20px;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         .btn {
-            padding: 15px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.05em;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
+            display: inline-block;
             width: 100%;
-            max-width: 400px;
-            justify-content: center;
-            box-sizing: border-box;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .btn-email {
-            background-color: var(--amarelo);
-            color: var(--preto);
-        }
-
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: white;
-        }
-
-        .btn-suporte {
-            background-color: #0078D7;
-            color: white;
+            padding: 0.9rem 1.5rem;
+            background-color: var(--yellow);
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
         }
 
         .btn:hover {
-            filter: brightness(1.1);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            background-color: var(--yellow-hover);
         }
 
-        .img-vinicius {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid white;
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--yellow);
+            border: 2px solid var(--yellow);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--yellow);
+            color: #000;
         }
 
         footer {
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: var(--cinza);
-            padding-bottom: 20px;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #000;
+            color: var(--gray-text);
+            font-size: 0.8rem;
+            border-top: 1px solid #222;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
 
-<!-- Menu de Abas Fixo no Topo -->
-<nav>
-    <div class="nav-container">
-        <a href="#sobre">Sobre Nós</a>
-        <a href="#porque">Por que Escolher</a>
-        <a href="#avaliacoes">Avaliações</a>
-        <a href="#galeria">Entregas</a>
-        <a href="#contato">Contato</a>
-    </div>
-</nav>
-
-<div class="container">
     <header>
-        <img src="image_337f9b.jpg" alt="Logo Objetivo Express" class="logo">
         <h1>Objetivo Express</h1>
-        <p>Serviço de motofrete ágil, seguro e profissional com Vinicius Policarpo.</p>
+        <p>Soluções Rápidas e Seguras em Motofrete</p>
     </header>
 
-    <!-- Sobre Nós -->
-    <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>A <strong>Objetivo Express</strong> é a sua solução definitiva para entregas rápidas. Entendemos a urgência e a importância de cada carga, unindo tecnologia, responsabilidade e agilidade para garantir que sua encomenda chegue ao destino com total segurança.</p>
-    </section>
+    <div class="container">
+        
+        <!-- Sobre a Empresa -->
+        <section class="about">
+            <h2>Sobre a Objetivo Express</h2>
+            <p>A <strong>Objetivo Express</strong> é uma empresa especializada em serviços de motofrete ágeis e seguros. Nosso compromisso é entregar sua documentação, mercadorias e cargas leves com total pontualidade, prezando pela integridade de cada item transportado e pela excelência no atendimento ao cliente.</p>
+        </section>
 
-    <!-- Por que escolher -->
-    <section id="porque">
-        <h2>Por que escolher a gente?</h2>
-        <p>Trabalhamos com rigorosos padrões de qualidade, documentação em dia, pontualidade extrema e total cuidado com o seu produto, seja ele um documento, uma caixa frágil ou carga comercial.</p>
-    </section>
-
-    <!-- Avaliações -->
-    <section id="avaliacoes">
-        <h2>Avaliações e Reputação</h2>
-        <p>Aprovação máxima de nossos clientes com nota <strong>4.96</strong> e centenas de entregas concluídas com excelência:</p>
-        <div class="grid-galeria">
-            <img src="image_32a901.jpg" alt="Avaliações Perfil 1">
-            <img src="image_32a8e7.jpg" alt="Notas de Agradecimento">
-            <img src="image_32a63d.jpg" alt="Trajetória e Viagens">
-            <img src="image_32a618.jpg" alt="Perfil Público Conquistas">
+        <!-- Quadradinhos de Serviços -->
+        <h2 class="services-title">O que entregamos</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Cartório</h3>
+                <p>Reconhecimento de firmas, certidões e trâmites legais com total segurança.</p>
+            </div>
+            <div class="card">
+                <h3>Banco</h3>
+                <p>Depósitos, malotes, compensações e pagamentos expressos.</p>
+            </div>
+            <div class="card">
+                <h3>Aeroporto</h3>
+                <p>Remessas urgentes de cargas e documentos para despacho aeroportuário.</p>
+            </div>
+            <div class="card">
+                <h3>Material Biológico</h3>
+                <p>Transporte especializado, adequado e ágil para exames e amostras.</p>
+            </div>
+            <div class="card">
+                <h3>Pequenas Encomendas</h3>
+                <p>Envio rápido de pacotes, caixas e volumes leves pela cidade.</p>
+            </div>
+            <div class="card">
+                <h3>Documentos Diários</h3>
+                <p>Contratos, chaves, <i>pendrives</i> e papéis corporativos do dia a dia.</p>
+            </div>
         </div>
-    </section>
 
-    <!-- Galeria de Entregas -->
-    <section id="galeria">
-        <h2>Nossas Entregas em Ação</h2>
-        <p>Cuidado e agilidade no transporte de mercadorias, caixas, eletrônicos e encomendas especiais:</p>
-        <div class="grid-galeria">
-            <img src="image_32a565.jpg" alt="Cargas e Caixas">
-            <img src="image_32a55e.jpg" alt="Baú Objetivo Express">
-            <img src="image_32a527.jpg" alt="Comprovante Latam Cargo">
-            <img src="image_32a51f.jpg" alt="Pacote Seguro">
-            <img src="image_32a27a.jpg" alt="Vinicius com Entrega 1">
-            <img src="image_32a276.jpg" alt="Vinicius com Entrega 2">
-        </div>
-    </section>
+        <!-- Seção de Contato -->
+        <section class="contact-section">
+            <h2>Precisa de um Envio Rápido?</h2>
+            <div class="rating">⭐ Mais de 4.9 estrelas em vários aplicativos de entrega</div>
+            
+            <div class="btn-container">
+                <!-- Botão Motoboy Principal -->
+                <a href="https://wa.me/5511944912805?text=Olá%20Vinicius,%20vim%20pelo%20site%20e%20preciso%20de%20um%20motofrete." class="btn" target="_blank">
+                    Chamar Motoboy Vinicius
+                </a>
+                
+                <!-- Botão Suporte Rápido -->
+                <a href="https://wa.me/5511914355526?text=Olá%20Lucas,%20preciso%20de%20suporte%20com%20uma%20entrega." class="btn btn-secondary" target="_blank">
+                    Suporte Rápido (Lucas)
+                </a>
+            </div>
+        </section>
 
-    <!-- Contato -->
-    <section id="contato">
-        <h2>Fale Conosco</h2>
-        <div class="btn-container">
-            <a href="https://wa.me/5511944912805" class="btn btn-whatsapp" target="_blank">
-                <img src="image_337f1b.png" alt="Vinicius Policarpo" class="img-vinicius">
-                WhatsApp Principal: (11) 94491-2805
-            </a>
-
-            <a href="https://wa.me/5511914355526" class="btn btn-suporte" target="_blank">
-                📞 Suporte Rápido: (11) 91435-5526
-            </a>
-
-            <a href="mailto:objetivomotofrete@gmail.com" class="btn btn-email">
-                ✉️ Enviar E-mail
-            </a>
-        </div>
-    </section>
+    </div>
 
     <footer>
-        <p>&copy; 2026 Objetivo Express - Todos os direitos reservados.</p>
+        <p>&copy; 2026 Objetivo Express. Todos os direitos reservados.</p>
     </footer>
-</div>
 
 </body>
 </html>
