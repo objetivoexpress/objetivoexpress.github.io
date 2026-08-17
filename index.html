@@ -7,6 +7,7 @@
     <style>
         :root {
             --amarelo: #ffcc00;
+            --amarelo-hover: #e6b800;
             --preto: #121212;
             --preto-claro: #1e1e1e;
             --branco: #ffffff;
@@ -20,59 +21,113 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Barra de Abas / Menu Superior */
+        nav {
+            background-color: var(--preto-claro);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid var(--amarelo);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            gap: 15px;
+        }
+
+        .nav-container a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .nav-container a:hover {
+            color: var(--preto);
+            background-color: var(--amarelo);
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 100px 20px 20px 20px; /* Espaço para o menu fixo */
             text-align: center;
         }
 
         header {
-            padding: 40px 0;
+            padding: 40px 0 20px 0;
         }
 
         .logo {
-            max-width: 280px;
+            max-width: 260px;
             margin-bottom: 20px;
             border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2);
         }
 
         section {
             background-color: var(--preto-claro);
-            padding: 30px;
+            padding: 35px 25px;
             border-radius: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             border: 2px solid var(--amarelo);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
 
         h1, h2 {
             color: var(--amarelo);
         }
 
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.2);
+            padding-bottom: 8px;
+        }
+
         p {
             color: #ddd;
+            font-size: 1.05em;
         }
 
         .grid-galeria {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
 
         .grid-galeria img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
             border-radius: 10px;
             border: 1px solid var(--amarelo);
-            transition: transform 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .grid-galeria img:hover {
-            transform: scale(1.03);
+            transform: scale(1.04);
+            box-shadow: 0 6px 15px rgba(255, 204, 0, 0.3);
         }
 
         .btn-container {
@@ -84,19 +139,20 @@
         }
 
         .btn {
-            padding: 15px 30px;
+            padding: 15px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1.05em;
             display: flex;
             align-items: center;
             gap: 12px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             width: 100%;
-            max-width: 420px;
+            max-width: 400px;
             justify-content: center;
             box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
         .btn-email {
@@ -115,20 +171,21 @@
         }
 
         .btn:hover {
-            filter: brightness(1.15);
-            transform: scale(1.02);
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
         }
 
         .img-vinicius {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid white;
         }
 
         footer {
-            margin-top: 50px;
+            margin-top: 40px;
             font-size: 0.9em;
             color: var(--cinza);
             padding-bottom: 20px;
@@ -137,28 +194,38 @@
 </head>
 <body>
 
+<!-- Menu de Abas Fixo no Topo -->
+<nav>
+    <div class="nav-container">
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#porque">Por que Escolher</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#galeria">Entregas</a>
+        <a href="#contato">Contato</a>
+    </div>
+</nav>
+
 <div class="container">
     <header>
-        <!-- Logo Principal -->
         <img src="image_337f9b.jpg" alt="Logo Objetivo Express" class="logo">
         <h1>Objetivo Express</h1>
         <p>Serviço de motofrete ágil, seguro e profissional com Vinicius Policarpo.</p>
     </header>
 
     <!-- Sobre Nós -->
-    <section>
+    <section id="sobre">
         <h2>Sobre Nós</h2>
         <p>A <strong>Objetivo Express</strong> é a sua solução definitiva para entregas rápidas. Entendemos a urgência e a importância de cada carga, unindo tecnologia, responsabilidade e agilidade para garantir que sua encomenda chegue ao destino com total segurança.</p>
     </section>
 
     <!-- Por que escolher -->
-    <section>
+    <section id="porque">
         <h2>Por que escolher a gente?</h2>
         <p>Trabalhamos com rigorosos padrões de qualidade, documentação em dia, pontualidade extrema e total cuidado com o seu produto, seja ele um documento, uma caixa frágil ou carga comercial.</p>
     </section>
 
     <!-- Avaliações -->
-    <section>
+    <section id="avaliacoes">
         <h2>Avaliações e Reputação</h2>
         <p>Aprovação máxima de nossos clientes com nota <strong>4.96</strong> e centenas de entregas concluídas com excelência:</p>
         <div class="grid-galeria">
@@ -170,7 +237,7 @@
     </section>
 
     <!-- Galeria de Entregas -->
-    <section>
+    <section id="galeria">
         <h2>Nossas Entregas em Ação</h2>
         <p>Cuidado e agilidade no transporte de mercadorias, caixas, eletrônicos e encomendas especiais:</p>
         <div class="grid-galeria">
@@ -184,21 +251,18 @@
     </section>
 
     <!-- Contato -->
-    <section>
+    <section id="contato">
         <h2>Fale Conosco</h2>
         <div class="btn-container">
-            <!-- Botão WhatsApp com foto do Vinicius -->
             <a href="https://wa.me/5511944912805" class="btn btn-whatsapp" target="_blank">
                 <img src="image_337f1b.png" alt="Vinicius Policarpo" class="img-vinicius">
                 WhatsApp Principal: (11) 94491-2805
             </a>
 
-            <!-- Botão Suporte Rápido -->
             <a href="https://wa.me/5511914355526" class="btn btn-suporte" target="_blank">
                 📞 Suporte Rápido: (11) 91435-5526
             </a>
 
-            <!-- Botão E-mail -->
             <a href="mailto:objetivomotofrete@gmail.com" class="btn btn-email">
                 ✉️ Enviar E-mail
             </a>
