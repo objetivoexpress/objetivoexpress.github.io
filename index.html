@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetivo Express - Motofrete Profissional</title>
+    <style>
+        :root {
+            --amarelo: #ffcc00;
+            --preto: #121212;
+            --preto-claro: #1e1e1e;
+            --branco: #ffffff;
+            --cinza: #888888;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--preto);
+            color: var(--branco);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header {
+            padding: 40px 0;
+        }
+
+        .logo {
+            max-width: 280px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        section {
+            background-color: var(--preto-claro);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border: 2px solid var(--amarelo);
+        }
+
+        h1, h2 {
+            color: var(--amarelo);
+        }
+
+        p {
+            color: #ddd;
+        }
+
+        .grid-galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .grid-galeria img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid var(--amarelo);
+            transition: transform 0.3s;
+        }
+
+        .grid-galeria img:hover {
+            transform: scale(1.03);
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s;
+            width: 100%;
+            max-width: 420px;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .btn-email {
+            background-color: var(--amarelo);
+            color: var(--preto);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .btn-suporte {
+            background-color: #0078D7;
+            color: white;
+        }
+
+        .btn:hover {
+            filter: brightness(1.15);
+            transform: scale(1.02);
+        }
+
+        .img-vinicius {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: var(--cinza);
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <!-- Logo Principal -->
+        <img src="image_337f9b.jpg" alt="Logo Objetivo Express" class="logo">
+        <h1>Objetivo Express</h1>
+        <p>Serviço de motofrete ágil, seguro e profissional com Vinicius Policarpo.</p>
+    </header>
+
+    <!-- Sobre Nós -->
+    <section>
+        <h2>Sobre Nós</h2>
+        <p>A <strong>Objetivo Express</strong> é a sua solução definitiva para entregas rápidas. Entendemos a urgência e a importância de cada carga, unindo tecnologia, responsabilidade e agilidade para garantir que sua encomenda chegue ao destino com total segurança.</p>
+    </section>
+
+    <!-- Por que escolher -->
+    <section>
+        <h2>Por que escolher a gente?</h2>
+        <p>Trabalhamos com rigorosos padrões de qualidade, documentação em dia, pontualidade extrema e total cuidado com o seu produto, seja ele um documento, uma caixa frágil ou carga comercial.</p>
+    </section>
+
+    <!-- Avaliações -->
+    <section>
+        <h2>Avaliações e Reputação</h2>
+        <p>Aprovação máxima de nossos clientes com nota <strong>4.96</strong> e centenas de entregas concluídas com excelência:</p>
+        <div class="grid-galeria">
+            <img src="image_32a901.jpg" alt="Avaliações Perfil 1">
+            <img src="image_32a8e7.jpg" alt="Notas de Agradecimento">
+            <img src="image_32a63d.jpg" alt="Trajetória e Viagens">
+            <img src="image_32a618.jpg" alt="Perfil Público Conquistas">
+        </div>
+    </section>
+
+    <!-- Galeria de Entregas -->
+    <section>
+        <h2>Nossas Entregas em Ação</h2>
+        <p>Cuidado e agilidade no transporte de mercadorias, caixas, eletrônicos e encomendas especiais:</p>
+        <div class="grid-galeria">
+            <img src="image_32a565.jpg" alt="Cargas e Caixas">
+            <img src="image_32a55e.jpg" alt="Baú Objetivo Express">
+            <img src="image_32a527.jpg" alt="Comprovante Latam Cargo">
+            <img src="image_32a51f.jpg" alt="Pacote Seguro">
+            <img src="image_32a27a.jpg" alt="Vinicius com Entrega 1">
+            <img src="image_32a276.jpg" alt="Vinicius com Entrega 2">
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section>
+        <h2>Fale Conosco</h2>
+        <div class="btn-container">
+            <!-- Botão WhatsApp com foto do Vinicius -->
+            <a href="https://wa.me/5511944912805" class="btn btn-whatsapp" target="_blank">
+                <img src="image_337f1b.png" alt="Vinicius Policarpo" class="img-vinicius">
+                WhatsApp Principal: (11) 94491-2805
+            </a>
+
+            <!-- Botão Suporte Rápido -->
+            <a href="https://wa.me/5511914355526" class="btn btn-suporte" target="_blank">
+                📞 Suporte Rápido: (11) 91435-5526
+            </a>
+
+            <!-- Botão E-mail -->
+            <a href="mailto:objetivomotofrete@gmail.com" class="btn btn-email">
+                ✉️ Enviar E-mail
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Objetivo Express - Todos os direitos reservados.</p>
+    </footer>
+</div>
+
+</body>
+</html>
